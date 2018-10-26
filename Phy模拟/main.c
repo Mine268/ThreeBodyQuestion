@@ -18,12 +18,11 @@ struct thing {
 
 struct force {
 	double strength;
-	double ang[2];
 } F01, F02, F12;
 
-double poslen(double x1, double x2, double y1, double y2) {
+double poslen(double x1, double x2, double y1, double y2, double z1, double z2) {
 	double len = 0;
-	len = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+	len = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2), pow(z1 - z2 , 2));
 	return len;
 }
 
@@ -35,8 +34,8 @@ double speed(double vx, double vy) {
 
 void initial() {
 	things[0].mass = 5.0;
-	things[0].pos[0] = 0; things[0].pos[1] = 0;
-	things[0].vector[0] = 1; things[0].vector[1] = 0;
+	things[0].pos[0] = 0; things[0].pos[1] = 0, things[0].pos[2] = 0;
+	things[0].vector[0] = 1; things[0].vector[1] = 0; things[0].vector[2] = 0; // ‘⁄’‚¿Ô
 
 	things[1].mass = 5.0;
 	things[1].pos[0] = 1; things[1].pos[1] = 0;
@@ -47,11 +46,8 @@ void initial() {
 	things[2].vector[0] = 2; things[2].vector[1] = 2;
 
 	F01.strength = 0;
-	F01.ang[0] = 0; F01.ang[1] = 0;
 	F02.strength = 0;
-	F02.ang[0] = 0; F02.ang[1] = 0;
 	F12.strength = 0;
-	F12.ang[0] = 0; F12.ang[1] = 0;
 
 	return;
 }
