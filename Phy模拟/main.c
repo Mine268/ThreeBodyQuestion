@@ -12,9 +12,8 @@ const double G = 1;
 
 struct thing {
 	double mass;
-	double vector[2]; 
-	double pos[2];
-	double ang[2];
+	double vector[3]; 
+	double pos[3];
 } things[3];
 
 struct force {
@@ -38,17 +37,14 @@ void initial() {
 	things[0].mass = 5.0;
 	things[0].pos[0] = 0; things[0].pos[1] = 0;
 	things[0].vector[0] = 1; things[0].vector[1] = 0;
-	things[0].ang[0] = 0; things[0].ang[1] = 0;
 
 	things[1].mass = 5.0;
 	things[1].pos[0] = 1; things[1].pos[1] = 0;
 	things[1].vector[0] = 0; things[1].vector[1] = 5;
-	things[1].ang[0] = 0; things[1].ang[1] = 1;
 
 	things[2].mass = 5;
 	things[2].pos[0] = .5; things[2].pos[1] = .5;
 	things[2].vector[0] = 2; things[2].vector[1] = 2;
-	things[2].ang[0] = 0; things[2].ang[1] = 1;
 
 	F01.strength = 0;
 	F01.ang[0] = 0; F01.ang[1] = 0;
